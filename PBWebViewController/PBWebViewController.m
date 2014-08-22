@@ -46,6 +46,14 @@
 - (void)commonInit
 {
     _showsNavigationToolbar = YES;
+    
+    id button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
+    self.navigationItem.rightBarButtonItem = button;
+}
+
+- (IBAction)doneAction:(id)sender 
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)load
